@@ -44,6 +44,6 @@ jobs:
       - name: Build and Push Docker image
         uses: docker/build-push-action@v4
         with:
-          context: DockerFileFolder
+          context: DockerFileFolder/
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/test_iris_cicd:latest
