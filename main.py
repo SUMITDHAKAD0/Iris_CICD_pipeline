@@ -24,3 +24,4 @@ if __name__ == "__main__":
     predictions, accuracy = make_predictions(X_test, y_test)
     
     logger.info("Pipeline execution completed.")
+
