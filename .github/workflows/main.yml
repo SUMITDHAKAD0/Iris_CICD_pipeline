@@ -40,6 +40,7 @@ jobs:
       - name: Push Docker image to Docker Hub
         run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/test_iris_cicd:latest
 
+<<<<<<< HEAD
       # # another way to build and push docker image to docker hub
       # - name: Build and Push Docker image
       #   uses: docker/build-push-action@v4
@@ -47,3 +48,11 @@ jobs:
       #     context: DockerFileFolder/ # uses when your Dockerfile inside folder(pass that folder path)
       #     push: true
       #     tags: ${{ secrets.DOCKERHUB_USERNAME }}/test_iris_cicd:latest
+=======
+      # another way to build and push docker image to docker hub
+      - name: Build and Push Docker image
+        uses: docker/build-push-action@v4
+        with:
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/test_iris_cicd:latest
+>>>>>>> 603daf44cf5378395ed210dc99b9d0b025a97374
