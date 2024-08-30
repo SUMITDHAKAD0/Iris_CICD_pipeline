@@ -17,7 +17,7 @@ def model_training(X_train, y_train):
     model.fit(X_train, y_train)
     
     # Save the model
-    model_path = 'models/iris_model.pkl'
+    model_path = 'artifacts/models/iris_model.pkl'
     os.makedirs(os.path.dirname(model_path), exist_ok=True)
     joblib.dump(model, model_path)
     logger.info(f"Model trained and saved at {model_path}.")

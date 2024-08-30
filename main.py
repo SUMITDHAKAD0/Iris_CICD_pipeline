@@ -1,20 +1,23 @@
 import logging
 import os
+import sys
 from src.data_ingestion import data_ingestion
 from src.data_preprocessing import data_preprocessing
 from src.model_training import model_training
 from src.make_predictions import make_predictions
 
 # Configure logging
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+log_info = '[%(asctime)s: %(levelname)s: %(module)s: %(message)s]'
+os.makedirs('artifacts/logs', exist_ok=True)
+logging.basicConfig(
+    level=logging.INFO, 
+    format=log_info, handlers=[
+    logging.FileHandler('artifacts/logs/pipeline.log'),
+    logging.StreamHandler(sys.stdout)]
+    )
 logger = logging.getLogger()
 
-# Ensure the logs directory exists
-os.makedirs('logs', exist_ok=True)
-file_handler = logging.FileHandler('logs/pipeline.log')
-logger.addHandler(file_handler)
-
-if __name__ == "__main__":
+def main_pipeline():
     logger.info("Pipeline execution started.")
     
     # Run the pipeline
@@ -24,4 +27,7 @@ if __name__ == "__main__":
     predictions, accuracy = make_predictions(X_test, y_test)
     
     logger.info("Pipeline execution completed.")
+
+# if __name__ == "__main__":
+#     main_pipeline()
 

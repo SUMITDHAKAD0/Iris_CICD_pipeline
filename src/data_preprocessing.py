@@ -7,11 +7,11 @@ from sklearn.preprocessing import StandardScaler
 logger = logging.getLogger(__name__)
 
 def save_data(X_train, X_test, y_train, y_test):
-    os.makedirs('data', exist_ok=True)
-    X_train.to_csv('data/X_train.csv', index=False)
-    X_test.to_csv('data/X_test.csv', index=False)
-    y_train.to_csv('data/y_train.csv', index=False)
-    y_test.to_csv('data/y_test.csv', index=False)
+    os.makedirs('artifacts/data', exist_ok=True)
+    X_train.to_csv('artifacts/data/X_train.csv', index=False)
+    X_test.to_csv('artifacts/data/X_test.csv', index=False)
+    y_train.to_csv('artifacts/data/y_train.csv', index=False)
+    y_test.to_csv('artifacts/data/y_test.csv', index=False)
     logger.info("Processed data saved.")
 
 def data_preprocessing(X, y):
