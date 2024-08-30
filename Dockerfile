@@ -20,4 +20,5 @@ ENV NAME World
 EXPOSE 80
 
 # Run main.py when the container launches
-CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "80"]
+# CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "80"]
+CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "80", "--reload"]

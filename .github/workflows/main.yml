@@ -34,8 +34,8 @@ jobs:
       - name: Build Docker image
         run: docker build . -t ${{ secrets.DOCKERHUB_USERNAME }}/test_iris_cicd:latest
 
-      # - name: Run Docker container
-      #   run: docker run --rm ${{ secrets.DOCKERHUB_USERNAME }}/test_iris_cicd:latest
+      - name: Run Docker container
+        run: docker run --rm ${{ secrets.DOCKERHUB_USERNAME }}/test_iris_cicd:latest
 
       - name: Push Docker image to Docker Hub
         run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/test_iris_cicd:latest
