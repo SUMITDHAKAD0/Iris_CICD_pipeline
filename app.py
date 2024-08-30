@@ -1,10 +1,9 @@
+import os
+import joblib
+from pydantic import BaseModel
+from main import main_pipeline
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import JSONResponse
-from pydantic import BaseModel
-import joblib  # Assuming the model is saved using joblib. You can use pickle if that was used instead.
-import os
-# import uvicorn
-from main import main_pipeline
 from src.make_predictions import IrisInput, make_prediction
 
 
